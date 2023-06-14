@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>negril.nx+gentoo@gmail.com</email>
+		<name>Paul Zander</name>
+	</maintainer>
+	<use>
+		<flag name="pbins">pbins</flag>
+		<flag name="pink">ping</flag>
+		<flag name="search-index">search-index</flag>
+	</use>
+</pkgmetadata>
