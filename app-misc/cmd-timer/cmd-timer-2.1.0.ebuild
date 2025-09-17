@@ -3,19 +3,29 @@
 
 EAPI=8
 
-if [ "${PV}" != "9999" ]; then
-	VERIFY_SIG_METHOD=signify
+if [[ "${PV}" == 9999* ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://anongit.hacktivis.me/git/cmd-timer.git"
+else
+	VERIFY_SIG_METHOD="signify"
 	inherit verify-sig
 
 	SRC_URI="
 		https://distfiles.hacktivis.me/releases/cmd-timer/${P}.tar.gz
-		verify-sig? ( https://distfiles.hacktivis.me/releases/cmd-timer/${P}.tar.gz.sign )
+		verify-sig? (
+			https://distfiles.hacktivis.me/releases/cmd-timer/${P}.tar.gz.sign
+		)
 	"
 
 	KEYWORDS="~amd64 ~arm64"
-else
-	inherit git-r3
-	EGIT_REPO_URI="https://anongit.hacktivis.me/git/cmd-timer.git"
+
+	SIG_PN="signify-keys-lanodan"
+	SIG_PV="2025"
+	BDEPEND="
+		verify-sig? (
+			sec-keys/${SIG_PN}:${SIG_PV}
+		)
+	"
 fi
 
 DESCRIPTION="run command at a specific interval"
@@ -25,30 +35,28 @@ SLOT="0"
 
 IUSE="static"
 
-if [ "${PV}" != "9999" ]; then
-	BDEPEND="${BDEPEND} verify-sig? ( sec-keys/signify-keys-lanodan:2025 )"
+src_unpack() {
+	default
 
-	VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/signify-keys-lanodan-2025.pub"
+	if use verify-sig && [[ "${PV}" != 9999* ]]; then
+		# Too many levels of symbolic links
+		cd "${DISTDIR}" || die
+		# NOTE You don't need to copy everything in ${A} to WORKDIR
+		cp ${A} "${WORKDIR}" || die
+		cd "${WORKDIR}" || die
 
-	src_unpack() {
-		if use verify-sig; then
-			# Too many levels of symbolic links
-			cd "${DISTDIR}" || die
-			cp ${A} "${WORKDIR}" || die
-			cd "${WORKDIR}" || die
-			verify-sig_verify_detached "${P}.tar.gz" "${P}.tar.gz.sign"
-			unpack "${P}.tar.gz"
-			rm "${P}.tar.gz"
-		else
-			default
-		fi
-	}
-fi
+		local VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/${SIG_PN}-${SIG_PV}.pub"
+		verify-sig_verify_detached "${P}.tar.gz" "${P}.tar.gz.sign"
 
-src_configure() {
-	use static && export LDSTATIC=-static
+		unpack "${P}.tar.gz"
+		rm "${P}.tar.gz"
+	fi
+}
+
+src_compile() {
+	emake $(usev static-libs LDSTATIC="-static")
 }
 
 src_install() {
-	emake install DESTDIR="${D}" PREFIX=/usr
+	emake install DESTDIR="${D}" PREFIX="${EPEFIX}/usr"
 }
