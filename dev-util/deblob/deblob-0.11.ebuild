@@ -5,7 +5,7 @@ EAPI=8
 
 MY_TEST_V="0.10"
 
-if [[ "$PV" == 9999 ]]; then
+if [[ "${PV}" == 9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://anongit.hacktivis.me/git/deblob.git"
 else
@@ -21,6 +21,14 @@ else
 		)
 	"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+
+	SIG_PN="signify-keys-lanodan"
+	SIG_PV="2025"
+	BDEPEND="
+		verify-sig? (
+			sec-keys/${SIG_PN}:${SIG_PV}
+		)
+	"
 fi
 
 DESCRIPTION="remove binary executables from a directory"
@@ -41,32 +49,26 @@ DEPEND="
 # built by hare
 QA_FLAGS_IGNORED="usr/bin/deblob"
 
-if [[ "${PV}" != "9999" ]]
-then
-	BDEPEND="${BDEPEND} verify-sig? ( sec-keys/signify-keys-lanodan:2025 )"
+src_unpack() {
+	if use verify-sig && [[ "${PV}" != 9999* ]]; then
+		# Too many levels of symbolic links
+		cd "${DISTDIR}" || die
+		cp ${A} "${WORKDIR}" || die
+		cd "${WORKDIR}" || die
 
-	VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/signify-keys-lanodan-2025.pub"
+		local VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/${SIG_PN}-${SIG_PV}.pub"
+		verify-sig_verify_detached "${P}.tar.gz" "${P}.tar.gz.sign"
+		use test && verify-sig_verify_detached "deblob-test-${MY_TEST_V}.tar.gz" "deblob-test-${MY_TEST_V}.tar.gz.sign"
+	fi
 
-	src_unpack() {
-		if use verify-sig; then
-			# Too many levels of symbolic links
-			cd "${DISTDIR}" || die
-			cp ${A} "${WORKDIR}" || die
-			cd "${WORKDIR}" || die
+	default
 
-			verify-sig_verify_detached "${P}.tar.gz" "${P}.tar.gz.sign"
-			use test && verify-sig_verify_detached "deblob-test-${MY_TEST_V}.tar.gz" "deblob-test-${MY_TEST_V}.tar.gz.sign"
-		fi
-
-		default
-
-		if use test; then
-			rm -r "${WORKDIR}/${P}/test" || die
-			mv "${WORKDIR}/deblob-test-${MY_TEST_V}" "${WORKDIR}/${P}/test" || die
-		fi
-	}
-fi
+	if use test && [[ "${PV}" != 9999* ]]; then
+		rm -r "${S}/test" || die
+		mv "${WORKDIR}/deblob-test-${MY_TEST_V}" "${S}/test" || die
+	fi
+}
 
 src_install() {
-	PREFIX="/usr" default
+	PREFIX="${EPREFIX}/usr" default
 }
