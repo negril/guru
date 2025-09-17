@@ -21,13 +21,13 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND="
 	>=virtual/jdk-1.8
-	acct-group/yacy
-	acct-user/yacy
+	acct-group/${PN}
+	acct-user/${PN}
 "
 RDEPEND="${DEPEND}"
 
 EANT_BUILD_TARGET="all"
-UNINSTALL_IGNORE="/usr/share/yacy/DATA"
+UNINSTALL_IGNORE="/usr/share/${PN}/DATA"
 
 src_install() {
 	# remove win-only stuff
@@ -38,28 +38,31 @@ src_install() {
 	rm -r "${S}/source" || die
 	rm "${S}/build.properties" "${S}/build.xml" || die
 
-	dodoc AUTHORS NOTICE && rm AUTHORS NOTICE COPYRIGHT gpl.txt
+	rm -r "${S}"/lib/*License || die
 
-	yacy_home="${EROOT}/usr/share/${PN}"
-	dodir ${yacy_home}
-	cp -r "${S}"/* "${D}${yacy_home}" || die
+	dodoc AUTHORS NOTICE
+	rm AUTHORS NOTICE COPYRIGHT gpl.txt || die
 
-	rm -r "${D}${yacy_home}"/lib/*License
+	local yacy_home="/usr/share/${PN}"
+	dodir "${yacy_home}"
 
-	dodir /var/log/yacy || die
-	chown yacy:yacy "${D}/var/log/yacy" || die
-	keepdir /var/log/yacy
+	insinto "${yacy_home}"
+	doins -r "${S}"/*
 
-	dosym /var/lib/yacy /${yacy_home}/DATA
+	dodir "/var/log/${PN}"
+	fowners "${PN}":"${PN}" "/var/log/${PN}"
+	keepdir "/var/log/${PN}"
+
+	dosym -r "/var/lib/${PN}" "${yacy_home}/DATA"
 
 	exeinto /etc/init.d
-	newexe "${FILESDIR}/yacy.rc" yacy
-	doconfd "${FILESDIR}/yacy.confd"
+	newexe "${FILESDIR}/${PN}.rc" "${PN}"
+	doconfd "${FILESDIR}/${PN}.confd"
 
-	systemd_newunit "${FILESDIR}"/${PN}-ipv6.service ${PN}.service
+	systemd_newunit "${FILESDIR}/${PN}-ipv6.service" "${PN}.service"
 }
 
 pkg_postinst() {
-	einfo "yacy.logging will write logfiles into /var/lib/yacy/LOG"
+	einfo "${PN}.logging will write logfiles into ${EPREFIX}/var/lib/${PN}/LOG"
 	einfo "To setup YaCy, open http://localhost:8090 in your browser."
 }
