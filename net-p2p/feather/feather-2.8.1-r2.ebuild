@@ -1,23 +1,37 @@
 # Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# RavFX (2025) Bump version and remove deprecated plugins
 
 EAPI=8
 
-inherit cmake desktop verify-sig xdg
+QTMIN="6.9.1"
+inherit cmake desktop xdg
 
 DESCRIPTION="A free, open-source Monero wallet"
 HOMEPAGE="https://featherwallet.org"
-SRC_URI="
-	https://featherwallet.org/files/releases/source/${P}.tar.gz
-	verify-sig? ( https://featherwallet.org/files/releases/source/${P}.tar.gz.asc )
-"
+
+if [[ "${PV}" == 9999* ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/feather-wallet/feather.git"
+else
+	inherit verify-sig
+	SRC_URI="
+		https://featherwallet.org/files/releases/source/${P}.tar.gz
+		verify-sig? ( https://featherwallet.org/files/releases/source/${P}.tar.gz.asc )
+	"
+	KEYWORDS="~amd64"
+
+	BDEPEND="
+		verify-sig? (
+			sec-keys/openpgp-keys-featherwallet
+		)
+	"
+	VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/openpgp-keys/featherwallet.asc"
+fi
 
 # Feather is released under the terms of the BSD license, but it vendors
 # code from Monero and Tor too.
 LICENSE="BSD MIT"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE="bounties calc crowdfunding home qrcode revuo tickers xmrig wayland"
 DEPEND="
 	dev-libs/libsodium:=
@@ -26,10 +40,10 @@ DEPEND="
 	~dev-libs/polyseed-1.0.0
 	dev-libs/libzip:=
 	dev-libs/boost:=[nls]
-	>=dev-qt/qtbase-6.9.1:6[wayland=]
-	>=dev-qt/qtsvg-6.9.1:6
-	>=dev-qt/qtmultimedia-6.9.1:6
-	>=dev-qt/qtwebsockets-6.9.1:6
+	>=dev-qt/qtbase-${QTMIN}:6[wayland?]
+	>=dev-qt/qtsvg-${QTMIN}:6
+	>=dev-qt/qtmultimedia-${QTMIN}:6
+	>=dev-qt/qtwebsockets-${QTMIN}:6
 	dev-libs/libgcrypt:=
 	sys-libs/zlib
 	dev-libs/openssl:=
@@ -42,20 +56,22 @@ RDEPEND="
 	net-vpn/tor
 	xmrig? ( net-misc/xmrig )
 "
-BDEPEND="
+BDEPEND+="
 	virtual/pkgconfig
-	verify-sig? ( sec-keys/openpgp-keys-featherwallet )
 "
 
-VERIFY_SIG_OPENPGP_KEY_PATH="${BROOT}"/usr/share/openpgp-keys/featherwallet.asc
-
 src_prepare() {
-	default
-	echo "#define FEATHER_VERSION \"${PV}\"" > "${WORKDIR}"/${P}/src/config-feather.h || die
-	echo "#define TOR_VERSION \"NOT_EMBEDDED\"" >> "${WORKDIR}"/${P}/src/config-feather.h || die
+	if [[ "${PV}" != 9999* ]]; then
+		cat > "${S}/src/config-feather.h" <<- EOF || die
+			#define FEATHER_VERSION "${PV}"
+			#define TOR_VERSION "NOT_EMBEDDED"
+		EOF
+	fi
+
 	if ! use wayland; then
 		eapply "${FILESDIR}/feather-no-wayland.patch"
 	fi
+
 	cmake_src_prepare
 }
 
@@ -90,13 +106,12 @@ src_compile() {
 src_install() {
 	dobin "${BUILD_DIR}/bin/feather"
 
-	newicon -s 256 "${WORKDIR}"/${P}/src/assets/images/appicons/256x256.png feather.png
-	newicon -s 128 "${WORKDIR}"/${P}/src/assets/images/appicons/128x128.png feather.png
-	newicon -s 96 "${WORKDIR}"/${P}/src/assets/images/appicons/96x96.png feather.png
-	newicon -s 64 "${WORKDIR}"/${P}/src/assets/images/appicons/64x64.png feather.png
-	newicon -s 48 "${WORKDIR}"/${P}/src/assets/images/appicons/48x48.png feather.png
-	newicon -s 32 "${WORKDIR}"/${P}/src/assets/images/appicons/32x32.png feather.png
-	domenu "${WORKDIR}"/${P}/src/assets/feather.desktop
+	local res
+	for res in 32 48 64 96 128 256 512 ; do
+		newicon -s "${res}" "src/assets/images/appicons/${res}x${res}.png" "feather.png"
+	done
+
+	domenu "src/assets/feather.desktop"
 }
 
 pkg_postinst() {
