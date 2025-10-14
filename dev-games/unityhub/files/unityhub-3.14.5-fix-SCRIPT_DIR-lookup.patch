@@ -1,0 +1,25 @@
+From 0f2711510398e0b6c7cd750bc6fba5136a226ab6 Mon Sep 17 00:00:00 2001
+From: Paul Zander <negril.nx+gentoo@gmail.com>
+Date: Tue, 14 Oct 2025 19:05:13 +0200
+Subject: [PATCH] fix SCRIPT_DIR lookup v2
+
+Signed-off-by: Paul Zander <negril.nx+gentoo@gmail.com>
+
+diff --git a/opt/unityhub/unityhub b/opt/unityhub/unityhub
+index 5efd35f..e39c62d 100755
+--- a/opt/unityhub/unityhub
++++ b/opt/unityhub/unityhub
+@@ -4,8 +4,6 @@
+ # set -eux
+ 
+ UNPRIVILEGED_USERNS_ENABLED=$(cat /proc/sys/kernel/unprivileged_userns_clone 2>/dev/null)
+-SOURCE="${BASH_SOURCE[0]}"
+-while [ -h "$SOURCE" ] ; do SOURCE="$(readlink "$SOURCE")"; done
+-SCRIPT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
++SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+ 
+ exec "$SCRIPT_DIR/unityhub-bin" "$([[ $UNPRIVILEGED_USERNS_ENABLED == '' || $UNPRIVILEGED_USERNS_ENABLED == 0 ]] && echo '--no-sandbox')" "$@"
+\ No newline at end of file
+-- 
+2.51.0
+

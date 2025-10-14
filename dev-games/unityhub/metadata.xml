@@ -8,4 +8,8 @@
 	<upstream>
 		<changelog>https://unity.com/unity-hub/release-notes</changelog>
 	</upstream>
+	<use>
+		<flag name="system-ffmpeg">Use system-wide <pkg>media-video/ffmpeg</pkg> instead of bundled</flag>
+		<flag name="system-libs">Use system libs instead of bundled</flag>
+	</use>
 </pkgmetadata>
