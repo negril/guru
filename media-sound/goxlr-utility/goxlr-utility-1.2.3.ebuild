@@ -655,7 +655,7 @@ CRATES="
 	zvariant_utils@3.2.1
 "
 
-declare -A GIT_CRATES=(
+declare -gA GIT_CRATES=(
 	[xpc-connection-sys]='https://github.com/dfrankland/xpc-connection-rs;cd4fb3d05edb4292ccb9566ae27cdeb874222d2a;xpc-connection-rs-%commit%/xpc-connection-sys'
 )
 

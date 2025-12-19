@@ -1,9 +1,9 @@
-# Copyright 2019-2021 Gentoo Authors
+# Copyright 2019-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit flag-o-matic multilib multiprocessing toolchain-funcs
+inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="Minimal CGI library for web applications"
 HOMEPAGE="https://kristaps.bsd.lv/kcgi/"
@@ -89,8 +89,8 @@ src_test() {
 
 src_install() {
 	bmake DESTDIR="${D}" \
-	    DATADIR="${EPREFIX}/usr/share/doc/${PF}/examples" \
-	    install || die
+		DATADIR="${EPREFIX}/usr/share/doc/${PF}/examples" \
+		install || die
 
 	einstalldocs
 }

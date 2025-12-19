@@ -390,24 +390,28 @@ IUSE="test"
 RESTRICT="test"
 
 DEPEND="
-		>=dev-libs/glib-2.76.3:2
-		>=dev-libs/openssl-3.0.10:=
-		>=gui-libs/gtk-4.10.4:4
-		>=gui-libs/libadwaita-1.3.3:1
-		>=media-libs/alsa-lib-1.2.9
-		>=media-libs/libpulse-15.0[glib]
-		virtual/zlib:=
-		x11-libs/cairo
-		x11-libs/gdk-pixbuf:2
-		x11-libs/pango
+	>=dev-libs/glib-2.76.3:2
+	>=dev-libs/openssl-3.0.10:=
+	>=gui-libs/gtk-4.10.4:4
+	>=gui-libs/libadwaita-1.3.3:1
+	>=media-libs/alsa-lib-1.2.9
+	>=media-libs/libpulse-15.0[glib]
+	virtual/zlib:=
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
+	x11-libs/pango
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
-		app-alternatives/ninja
-		>=dev-build/meson-1.1.1
-		>=dev-libs/appstream-glib-0.8.2
-		test? ( || ( dev-lang/rust[clippy]
-					 dev-lang/rust-bin[clippy] ) )
+	app-alternatives/ninja
+	>=dev-build/meson-1.1.1
+	>=dev-libs/appstream-glib-0.8.2
+	test? (
+		|| (
+			dev-lang/rust[clippy]
+			dev-lang/rust-bin[clippy]
+		)
+	)
 "
 
 # rust does not use *FLAGS from make.conf, silence portage warning
@@ -429,8 +433,8 @@ src_configure() {
 		"${S}"/data/meson.build \
 		|| die
 	mv "${S}/data/dev.alextren.Spot.appdata.xml" \
-	   "${S}/data/dev.alextren.Spot.metainfo.xml" \
-	   || die
+		"${S}/data/dev.alextren.Spot.metainfo.xml" \
+		|| die
 
 	# empty cargo.sh, compiling is done by cargo_src_compile
 	echo "#!/bin/bash" > "${S}/build-aux/cargo.sh" \

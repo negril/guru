@@ -20,26 +20,26 @@ RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="
-		${PYTHON_DEPS}
-		>=gui-libs/gtk-4.12.0
-		>=gui-libs/libadwaita-1.4.0
-		>=dev-python/pygobject-3.44.1
-		>=dev-python/pillow-10.0.0
-		>=media-libs/mutagen-1.46.0
-		>=dev-python/python-magic-0.4.27
-		>=dev-python/pyacoustid-1.2.2-r1
-		test? ( >=dev-python/pytest-7.4.0 )
+	${PYTHON_DEPS}
+	>=gui-libs/gtk-4.12.0
+	>=gui-libs/libadwaita-1.4.0
+	>=dev-python/pygobject-3.44.1
+	>=dev-python/pillow-10.0.0
+	>=media-libs/mutagen-1.46.0
+	>=dev-python/python-magic-0.4.27
+	>=dev-python/pyacoustid-1.2.2-r1
+	test? ( >=dev-python/pytest-7.4.0 )
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
-		>=dev-build/meson-1.2.1-r1
+	>=dev-build/meson-1.2.1-r1
 "
 
 src_install() {
 	sed -i \
 		-e 's/^#!.*/#!\/usr\/bin\/python3/g' \
 		"${S}-build/src/eartag" \
-	    || die
+	|| die
 
 	meson_src_install
 	python_optimize

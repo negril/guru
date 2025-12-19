@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	 <!-- maintainer-needed -->
-    <upstream>
-        <remote-id type="codeberg">LGFae/awww</remote-id>
-        <bugs-to>https://codeberg.org/LGFae/awww/issues</bugs-to>
-    </upstream>
+	<upstream>
+		<remote-id type="codeberg">LGFae/awww</remote-id>
+		<bugs-to>https://codeberg.org/LGFae/awww/issues</bugs-to>
+	</upstream>
 </pkgmetadata>

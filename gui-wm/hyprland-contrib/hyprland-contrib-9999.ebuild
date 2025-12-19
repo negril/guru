@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,6 +7,7 @@ inherit optfeature
 
 DESCRIPTION="Community-maintained extensions for hyprland"
 HOMEPAGE="https://hyprland.org/"
+
 if [[ ${PV} == 9999 ]]; then
 	EGIT_REPO_URI="https://github.com/hyprwm/contrib.git"
 	inherit git-r3
@@ -53,35 +54,35 @@ DEPEND="${RDEPEND}"
 
 src_install() {
 	if use grimblast; then
-	   pushd grimblast || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd grimblast || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use hyprprop; then
-	   pushd hyprprop || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd hyprprop || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use hdrop; then
-	   pushd hdrop || die
-	   PREFIX="${D}/usr" emake hdrop.1 #PR:80 will fix this
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd hdrop || die
+		PREFIX="${D}/usr" emake hdrop.1 #PR:80 will fix this
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use scratchpad; then
-	   pushd scratchpad || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd scratchpad || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use shellevents; then
-	   pushd shellevents || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd shellevents || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use swap; then
-	   pushd try_swap_workspace || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd try_swap_workspace || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 }
 

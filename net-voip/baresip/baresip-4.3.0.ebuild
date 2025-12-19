@@ -13,9 +13,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="aac acip alsa amr aptx aom codec2 console dbus echo evdev ffmpeg gstreamer
-	  gtk3 jack httpd httpreq mpa mqtt opus pipewire portaudio pulseaudio sdl
-	  serreg snapshot sndfile spandsp static-libs syslog tcpcontrol v4l video vpx webrtc X"
+IUSE="
+	aac acip alsa amr aptx aom codec2 console dbus echo evdev ffmpeg gstreamer
+	gtk3 jack httpd httpreq mpa mqtt opus pipewire portaudio pulseaudio sdl
+	serreg snapshot sndfile spandsp static-libs syslog tcpcontrol v4l video vpx webrtc X
+"
 
 RE_PVF="$(ver_cut 1-2)*"
 

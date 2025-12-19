@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -53,30 +53,30 @@ BDEPEND="
 DEPEND="${RDEPEND}"
 
 src_install() {
-	if use grimblast; then
-	   pushd grimblast || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		if use grimblast; then
+		pushd grimblast || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use hyprprop; then
-	   pushd hyprprop || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd hyprprop || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use scratchpad; then
-	   pushd scratchpad || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd scratchpad || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use shellevents; then
-	   pushd shellevents || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd shellevents || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 	if use swap; then
-	   pushd try_swap_workspace || die
-	   PREFIX="${D}/usr" emake install
-	   popd || die
+		pushd try_swap_workspace || die
+		PREFIX="${D}/usr" emake install
+		popd || die
 	fi
 }
 

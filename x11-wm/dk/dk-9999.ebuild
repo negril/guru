@@ -1,4 +1,4 @@
-# Copyright 2021-2022 Gentoo Authors
+# Copyright 2021-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -55,7 +55,7 @@ src_install() {
 	dodoc README.md
 	if use man; then
 		#sed "s/VERSION/${VERSION}/g" man/dk.1 || die
-	    doman man/*.*
+		doman man/*.*
 	fi
 	#dobin dk dkcmd
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" DOC="/usr/share/doc/${PF}" MAN="/usr/share/man/man1/" install

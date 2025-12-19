@@ -26,7 +26,7 @@ RDEPEND="
 "
 BDEPEND="
 	test? (
-	    >=dev-python/coverage-4.0.0[${PYTHON_USEDEP}]
+		>=dev-python/coverage-4.0.0[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/python-openstackclient-3.3.0[${PYTHON_USEDEP}]
 		>=dev-python/stestr-1.0.0[${PYTHON_USEDEP}]
