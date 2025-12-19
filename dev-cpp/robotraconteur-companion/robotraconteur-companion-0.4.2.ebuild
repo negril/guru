@@ -7,8 +7,10 @@ inherit cmake
 
 DESCRIPTION="Robot Raconteur C++ Companion Library"
 HOMEPAGE="https://github.com/robotraconteur/robotraconteur_companion"
-SRC_URI="https://github.com/robotraconteur/robotraconteur_companion/releases/download/v${PV}/RobotRaconteurCompanion-${PV}-Source.tar.gz"
 
+SRC_URI="
+	https://github.com/robotraconteur/robotraconteur_companion/releases/download/v${PV}/RobotRaconteurCompanion-${PV}-Source.tar.gz
+"
 S="${WORKDIR}/RobotRaconteurCompanion-${PV}-Source"
 
 LICENSE="Apache-2.0"
@@ -24,11 +26,11 @@ DEPEND="dev-libs/boost:=
 RDEPEND="${DEPEND}"
 
 src_configure() {
-local mycmakeargs=(
-	    -DCMAKE_SKIP_RPATH=ON
-	    -DBUILD_TESTING=OFF
-	    -DBUILD_DOCUMENTATION=OFF
-	    -DROBOTRACONTEUR_COMPANION_SOVERSION_MAJOR_ONLY=ON
+	local mycmakeargs=(
+		-DCMAKE_SKIP_RPATH=ON
+		-DBUILD_TESTING=OFF
+		-DBUILD_DOCUMENTATION=OFF
+		-DROBOTRACONTEUR_COMPANION_SOVERSION_MAJOR_ONLY=ON
 	)
 	cmake_src_configure
 }

@@ -5,10 +5,9 @@ EAPI=8
 
 inherit fcaps meson
 
-if [[ "${PV}" == 9999 ]]
-then
-	  inherit git-r3
-	  EGIT_REPO_URI="https://github.com/mstoeckl/${PN}.git"
+if [[ "${PV}" == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/mstoeckl/${PN}.git"
 else
 	SRC_URI="https://github.com/mstoeckl/swaylock-plugin/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"

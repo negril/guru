@@ -40,8 +40,8 @@ DESCRIPTION="Display existing Wayland applications as a wallpaper"
 HOMEPAGE="https://gitlab.freedesktop.org/mstoeckl/windowtolayer"
 
 if [[ ${PV} == 9999 ]]; then
-	  inherit git-r3
-	  EGIT_REPO_URI="https://gitlab.freedesktop.org/mstoeckl/${PN}.git"
+	inherit git-r3
+	EGIT_REPO_URI="https://gitlab.freedesktop.org/mstoeckl/${PN}.git"
 else
 	SRC_URI="
 		https://gitlab.freedesktop.org/mstoeckl/windowtolayer/-/archive/v${PV}/${PN}-v${PV}.tar.bz2 -> ${P}.tar.bz2
@@ -61,8 +61,8 @@ QA_FLAGS_IGNORED="/usr/bin/${PN}"
 
 src_unpack() {
 	if [[ ${PV} == 9999 ]]; then
-		  git-r3_src_unpack
-		  cargo_live_src_unpack
+		git-r3_src_unpack
+		cargo_live_src_unpack
 	else
 		cargo_src_unpack
 	fi

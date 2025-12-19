@@ -23,9 +23,11 @@ DEPEND="dev-libs/boost:=
 	dev-libs/libusb
 	sys-apps/dbus
 	net-wireless/bluez
-	python? ( dev-python/numpy[${PYTHON_USEDEP}]
-	          dev-python/setuptools[${PYTHON_USEDEP}]
-	          dev-python/pip[${PYTHON_USEDEP}] )
+	python? (
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+		dev-python/pip[${PYTHON_USEDEP}]
+	)
 "
 RDEPEND="
 	${DEPEND}
@@ -40,38 +42,38 @@ REQUIRED_USE="
 
 python_configure() {
 	local mycmakeargs=(
-	    -DCMAKE_SKIP_RPATH=ON
-	    -DBUILD_GEN=ON
-	    -DBUILD_TESTING=OFF
-	    -DBUILD_DOCUMENTATION=OFF
-	    -DBUILD_PYTHON3=ON
-	    -DINSTALL_PYTHON3_PIP=ON
-	    -DINSTALL_PYTHON3_PIP_EXTRA_ARGS="--compile --use-pep517 --no-build-isolation --no-deps --root-user-action=ignore"
-	    -DROBOTRACONTEURCORE_SOVERSION_MAJOR_ONLY=ON
+		-DCMAKE_SKIP_RPATH=ON
+		-DBUILD_GEN=ON
+		-DBUILD_TESTING=OFF
+		-DBUILD_DOCUMENTATION=OFF
+		-DBUILD_PYTHON3=ON
+		-DINSTALL_PYTHON3_PIP=ON
+		-DINSTALL_PYTHON3_PIP_EXTRA_ARGS="--compile --use-pep517 --no-build-isolation --no-deps --root-user-action=ignore"
+		-DROBOTRACONTEURCORE_SOVERSION_MAJOR_ONLY=ON
 	)
 	cmake_src_configure
 }
 
 src_configure() {
 	if use python; then
-	    python_foreach_impl python_configure
+		python_foreach_impl python_configure
 	else
-	    local mycmakeargs=(
-	        -DCMAKE_SKIP_RPATH=ON
-	        -DBUILD_GEN=ON
-	        -DBUILD_TESTING=OFF
-	        -DBUILD_DOCUMENTATION=OFF
-	        -DROBOTRACONTEURCORE_SOVERSION_MAJOR_ONLY=ON
-	    )
-	    cmake_src_configure
+		local mycmakeargs=(
+			-DCMAKE_SKIP_RPATH=ON
+			-DBUILD_GEN=ON
+			-DBUILD_TESTING=OFF
+			-DBUILD_DOCUMENTATION=OFF
+			-DROBOTRACONTEURCORE_SOVERSION_MAJOR_ONLY=ON
+		)
+		cmake_src_configure
 	fi
 }
 
 src_compile() {
 	if use python; then
-	    python_foreach_impl cmake_src_compile
+		python_foreach_impl cmake_src_compile
 	else
-	    cmake_src_compile
+		cmake_src_compile
 	fi
 }
 
@@ -82,8 +84,8 @@ python_install(){
 
 src_install() {
 	if use python; then
-	    python_foreach_impl python_install
+		python_foreach_impl python_install
 	else
-	    cmake_src_install
+		cmake_src_install
 	fi
 }

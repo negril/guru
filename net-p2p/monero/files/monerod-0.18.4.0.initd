@@ -16,13 +16,13 @@ retry="SIGTERM/30/SIGKILL/5"
 
 
 depend() {
-    after net
-    need localmount
+	after net
+	need localmount
 }
 
 start_pre() {
-    checkpath --directory --owner ${command_user} --mode 0755 \
-	      /var/lib/monero /var/log/monero $(dirname ${pidfile})
+	checkpath --directory --owner ${command_user} --mode 0755 \
+		/var/lib/monero /var/log/monero $(dirname ${pidfile})
 }
 
 status() {

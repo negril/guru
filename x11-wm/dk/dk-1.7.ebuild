@@ -1,4 +1,4 @@
-# Copyright 2021-2022 Gentoo Authors
+# Copyright 2021-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~riscv ~x86"
 
 IUSE="examples man"
-RESTRICT=strip
+RESTRICT="strip"
 
 DEPEND="
 	x11-base/xcb-proto
@@ -52,7 +52,7 @@ src_install() {
 	cd natemaia-dk-bc9bd6349321 || die
 	if use man; then
 		sed "s/VERSION/${VERSION}/g" man/dk.1 || die
-	    doman man/*.*
+		doman man/*.*
 	fi
 
 	dobin dk dkcmd

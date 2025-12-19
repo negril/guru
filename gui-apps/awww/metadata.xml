@@ -2,11 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-    	<email>pieter.kn0101@gmail.com</email>
-        <name>Pieter</name>
-    </maintainer>
-    <upstream>
-        <remote-id type="codeberg">LGFae/awww</remote-id>
-        <bugs-to>https://codeberg.org/LGFae/awww/issues</bugs-to>
-    </upstream>
+		<email>pieter.kn0101@gmail.com</email>
+		<name>Pieter</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="codeberg">LGFae/awww</remote-id>
+		<bugs-to>https://codeberg.org/LGFae/awww/issues</bugs-to>
+	</upstream>
 </pkgmetadata>
