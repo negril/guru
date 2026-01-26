@@ -1,6 +1,6 @@
 # See gitmailmap(5) for format details.
 # Please keep this list sorted.
-# Use "grep -v '^#' .mailmap | LC_ALL=en_US.utf-8 sort".
+# Use "grep -v '^#' .mailmap | LC_ALL=C.utf-8 sort".
 A person <agooglygooglr@gmail.com> Dale Sweeney <agooglygooglr@gmail.com>
 Adel KARA SLIMANE <adel.ks@zegrapher.com> Adel KARA SLIMANE <adel@karaslimane.com>
 Aisha Tammy <gentoo@aisha.cc> Aisha Tammy <floss@bsd.ac>
