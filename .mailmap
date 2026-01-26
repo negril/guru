@@ -1,8 +1,128 @@
 # See gitmailmap(5) for format details.
 # Please keep this list sorted.
 # Use "grep -v '^#' .mailmap | LC_ALL=en_US.utf-8 sort".
+A person <agooglygooglr@gmail.com> Dale Sweeney <agooglygooglr@gmail.com>
+Adel KARA SLIMANE <adel.ks@zegrapher.com> Adel KARA SLIMANE <adel@karaslimane.com>
+Aisha Tammy <gentoo@aisha.cc> Aisha Tammy <floss@bsd.ac>
+Aisha Tammy <gentoo@aisha.cc> epsilonKNOT <gentoo@aisha.cc>
+Alarig Le Lay <alarig@swordarmor.fr> alarig <alarig@swordarmor.fr>
+Alessandro Barbieri <lssndrbarbieri@gmail.com> Alessandro-Barbieri <lssndrbarbieri@gmail.com>
+Alexander Edward Holcomb <alex@alexsdigital.rodeo> Alexander Holcomb <alex@alexsdigital.rodeo>
+Alexander Puck Neuwirth <apn-pucky@gentoo.org> Alexander Puck Neuwirth <alexander@neuwirth-informatik.de>
+Alexandru Campeanu <tiotags1@gmail.com> tiotags <tiotags1@gmail.com>
+Alexis Praga <alexis.praga@proton.me> Alexis Praga <alexis praga>
+Alexis Praga <alexis.praga@proton.me> Alexis Praga <alexis@praga.dev>
+Andres Becerra <andres.becerra@gmail.com> Andrés Becerra <andres.becerra@gmail.com>
+Andrew Ammerlaan <andrewammerlaan@riseup.net> Andrew Ammerlaan <andrewammerlaan@gentoo.org>
+Anna (cybertailor) K <cyber+gentoo@sysrq.in> Anna (cybertailor) Vyalkova <cyber+gentoo@sysrq.in>
+Anna (cybertailor) K <cyber+gentoo@sysrq.in> Anna Vyalkova <cyber+gentoo@sysrq.in>
+Anna (cybertailor) K <cyber+gentoo@sysrq.in> Anna Vyalkova <cyber@sysrq.in>
+Anna (cybertailor) K <cyber+gentoo@sysrq.in> Anna Vyalkova <cybertailor@gmail.com>
+Anna (cybertailor) K <cyber+gentoo@sysrq.in> jan Anja (cybertailor) <cyber+gentoo@sysrq.in>
+Anna <anna@navirc.com> Anna (navi) Figueiredo Gomes <anna@navirc.com>
+Anna <anna@navirc.com> Anna (navi) Figueiredo Gomes <navi@vlhl.dev>
+Arif Kabayel <myisha.gentoo@proton.me> Myisha Betty <myisha.gentoo@proton.me>
+Arsen Arsenović <arsen@gentoo.org> Arsen Arsenović <arsen@aarsen.me>
+Arthur Zamarin <arthurzam@gentoo.org> Arthur Zamarin <arthurzam@gmail.com>
+Arthur Zamarin <arthurzam@gentoo.org> Zamarin Arthur <arthurzam@gmail.com>
+Avis Drożniak <queereen@riseup.net> Avis Drożniak <avis@autistici.org>
+Azael Reyes <azael.devel@gmail.com> Azael Reyes (devel) <azael.devel@gmail.com>
+Bernd Waibel <waebbl@gmail.com> Bernd Waibel <waebbl-gentoo@posteo.net>
+Big Pineapple <zhangzheng.dylan@foxmail.com> Zhang Zheng <zhangzheng.dylan@foxmail.com>
+Brahmajit Das <listout@listout.xyz> Brahmajit Das <brahmajit.xyz@gmail.com>
+Bryce Copeland <truffle074@gmail.com> Bryce Copeland (truffle) <truffle074@gmail.com>
+Bryce Copeland <truffle074@gmail.com> truffle <truffle074@gmail.com>
+Charlie Quinet <w.iron.zombie@gmail.com> Username404-59 <w.iron.zombie@gmail.com>
+David Denoncin <ddenoncin@gmail.com> David Denoncin <gentoo@denoncin.fr>
+Dawn Xu <18202203719@163.com> Dawn Xu <dawn_xu_helloworld@163.com>
+Degni Luciano <degni.public@gmail.com> Luciano Degni (Pungolo) <degni.public@gmail.com>
+Degni Luciano <degni.public@gmail.com> Luciano Degni <degni.public@gmail.com>
+Eric Joldasov <bratishkaerik@landless-city.net> BratishkaErik <bratishkaerik@getgoogleoff.me>
+Eric Joldasov <bratishkaerik@landless-city.net> Eric Joldasov <bratishkaerik@getgoogleoff.me>
+Filip Štamcar <projects@filips.si> Filip Štamcar <filip.stamcar@hotmail.com>
+Florian Schmaus <flow@gentoo.org> Florian Schmaus <flo@geekplace.eu>
+FluffyJay1 <michaelzcyang@gmail.com> Michael Yang <michaelzcyang@gmail.com>
+Gabriel M. Dutra <me@dmdutra.dev> Gabriel M. Dutra <0xdutra@gmail.com>
+Gabriel M. Dutra <me@dmdutra.dev> Gabriel M. Dutra <gentoobeer@gmail.com>
+Gabriel M. Dutra <me@dmdutra.dev> Gabriel M. Dutra <git@dutra.sh>
+Gabriel M. Dutra <me@dmdutra.dev> Gabriel M. Dutra <hi@dutra.sh>
+Gabriel M. Dutra <me@dmdutra.dev> Gabriel de Moura Dutra <hi@dutra.sh>
+Gonçalo Duarte <gonegrier.duarte@gmail.com> Gonçalo Negrier Duarte <gonegrier.duarte@gmail.com>
+Hee-Suk <hskimse1@gmail.com> Hee-Suk Kim <hskimse1@gmail.com>
+Jack Sangdahl <0x6a73@pm.me> Jack Sangdahl <jack@pngu.org>
+James Beddek <telans@posteo.de> Theo Anderson <telans@posteo.de>
+Jesse De Haan <dehaanjesses@gmail.com> Jesse De Haan <me@jdeh.ca>
+Joshua Clifton <ayohss@proton.me> Joshua Clifton <joshieworld1269@gmail.com>
+Julianne Clarke <colonia_duck@posteo.net> Julianne Clarke <colonia-duck@posteo.net>
+Julianne Clarke <colonia_duck@posteo.net> Thomas Clarke <colonia_duck@posteo.net>
+Julianne Clarke <colonia_duck@posteo.net> Thomas Clarke <tomclarke2006@hotmail.com>
+Julianne Clarke <colonia_duck@posteo.net> colonia-duck <colonia_duck@posteo.net>
+Julianne Clarke <colonia_duck@posteo.net> colonia-duck <tomclarke2006@hotmail.com>
+Justin <justin026@protonmail.com> Justin Donofrio <justin026@protonmail.com>
+Katalin Rebhan <me@dblsaiko.net> Marco Rebhan <me@dblsaiko.net>
+Konstantin Tutsch <mail@konstantintutsch.de> Konstantin Tutsch <mail@konstantintutsch.com>
+Kostadin Shishmanov <kocelfc@tutanota.com> Kostadin Shishmanov <kostadinshishmanov@protonmail.com>
+Leonardo Hernández Hernández <leohdz172@proton.me> Leonardo Hernandez Hernandez <leohdz172@outlook.com>
+Leonardo Hernández Hernández <leohdz172@proton.me> Leonardo Hernández Hernández <leohdz172@outlook.com>
+Liv (pelsh) Hugger <gentoo@liv.nrw> Liv Hugger <gentoo@liv.nrw>
+Maciej Barć <xgqt@riseup.net> Maciej Barć <xgqt@gentoo.org>
+Maciej Barć <xgqt@riseup.net> Maciej Barć <xgqt@protonmail.com>
+Marco Scardovi <marco@scardovi.com> ScardracS <marco@scardovi.com>
+Marco Scardovi <marco@scardovi.com> scardracs <marco@scardovi.com>
+Martin Matous <m@matous.dev> Martin Matouš <m@matous.dev>
+Martin Mokry <martin-kokos@users.noreply.github.com> Martin Mokry <martin-kokos@protonmail.com>
+Mathieu Roberge <robergem2008@gmail.com> Mathieu Roberge <contact.techoraye@gmail.com>
+Mathieu Roberge <robergem2008@gmail.com> Mathieu Roberge <contact.techoraye@techoraye.com>
+Mathieu Tortuyaux <mathieu.tortuyaux@gmail.com> Mathieu Tortuyaux <mtortuyaux@microsoft.com>
+Mathis Winterer <mrmagic223325@fedora.email> mr_magic223325 <mrmagic223325@fedora.email>
+Matt Jolly <matt.jolly@footclan.ninja> Matt Jolly <kangie@gentoo.org>
+Max G <codeswhite@protonmail.com> Max Grinberg <codeswhite@protonmail.com>
+Michael Egger <egger.m@protonmail.com> Michael Egger <michael.egger@tsn.at>
+Michael Zavertkin <misha.zavertkin@mail.ru> Misha Zavertkin <misha.zavertkin@mail.ru>
+Michal Rostecki <vadorovsky@disroot.org> Michal Rostecki <vadorovsky@protonmail.com>
+Mårten Wadenbäck <spamfilter-1@wadenback.se> Mårten Wadenbäck <marten@wadenback.se>
+NRK <nrk@disroot.org> Nickolas Raymond Kaczynski <nrk@disroot.org>
+Nicolas PARLANT <nicolas.parlant@parhuet.fr> PPN-SD <nicolas.parlant@parhuet.fr>
+Niklaus 'vimja' Hofer <gentoo-bugzilla@vimja.email> Niklaus Hofer <gentoo-bugzilla@vimja.email>
 Nowa Ammerlaan <nowa@gentoo.org> <aammerlaan@science.ru.nl>
+Nowa Ammerlaan <nowa@gentoo.org> <andrew.ammerlaan@ru.nl>
 Nowa Ammerlaan <nowa@gentoo.org> <andrewammerlaan@gentoo.org>
 Nowa Ammerlaan <nowa@gentoo.org> <andrewammerlaan@riseup.net>
-Nowa Ammerlaan <nowa@gentoo.org> <andrew.ammerlaan@ru.nl>
 Nowa Ammerlaan <nowa@gentoo.org> <nowa-ammerlaan@riseup.net>
+Oz N Tiram <oz.tiram@gmail.com> Oz Tiram <oz.tiram@gmail.com>
+Patrick J Taylor <patrick.joseph.taylor@gmail.com> Patrick Taylor <patrick.joseph.taylor@gmail.com>
+Paul Zander <negril.nx+gentoo@gmail.com> Paul Zander <negril.nx@gmail.com>
+Philippe Chaintreuil <gentoo_bugs_peep@parallaxshift.com> Philippe Chaintreuil <gentoo_bugs_2_peep@parallaxshift.com>
+Piotr Kubaj <pkubaj@anongoth.pl> pkubaj <pkubaj@anongoth.pl>
+QaidVoid <qaidvoid@gmail.com> Rabindra Dhakal <contact@qaidvoid.dev>
+QaidVoid <qaidvoid@gmail.com> Rabindra Dhakal <qaidvoid@gmail.com>
+Rahil Bhimjiani <me@rahil.rocks> Rahil Bhimjiani <rahil3108@gmail.com>
+Ralph Seichter <gentoo@seichter.de> Ralph Seichter <github@seichter.de>
+Randall T. Vasquez <ran.dall@icloud.com> Randall Vasquez <ran.dall@icloud.com>
+Remigiusz Micielski <rmicielski@purelymail.com> Remigiusz Micielski <remigiusz.micielski@gmail.com>
+Robert Greener <me@r0bert.dev> Robert Greener <dev@greener.sh>
+Ronny (tastytea) Gutbrod <gentoo@tastytea.de> tastytea <gentoo@tastytea.de>
+Ronny (tastytea) Gutbrod <gentoo@tastytea.de> tea <gentoo@tastytea.de>
+Ronny (tastytea) Gutbrod <gentoo@tastytea.de> tea <tea+gentoo@cuddleslut.fr>
+Sergey Alirzaev <l29ah@riseup.net> Sergey Alirzaev <zl29ah@gmail.com>
+Seth M. Price <sprice623@aol.com> Seth Price <sprice623@aol.com>
+Shaoyu Tseng <shaoyu0209@tuta.io> Shaoyu Tseng <1over137@anche.no>
+Shaoyu Tseng <shaoyu0209@tuta.io> Shaoyu Tseng <dev@notyourcomputer.net>
+Skyler Mäntysaari <sm+gentoo@skym.fi> Skyler Mäntysaari <gentoo@samip.fi>
+Skyler Mäntysaari <sm+gentoo@skym.fi> Skyler Mäntysaari <sm+git@skym.fi>
+Skyler Mäntysaari <sm+gentoo@skym.fi> Skyler Mäntysaari <sm@skym.fi>
+Suleyman Farajli <suleyman@farajli.net> Süleyman Fərəcli <suleyman@farajli.net>
+Tony Olagbaiye <bqv@fron.io> bqv <bqv@fron.io>
+Viorel Munteanu <ceamac@gentoo.org> Viorel Munteanu <ceamac.paragon@gmail.com>
+Vivian Heisz (demize) <demize@unstable.systems> Vivian Heisz (vhz) <demize@unstable.systems>
+Vivian Heisz (demize) <demize@unstable.systems> demize <demize@unstable.systems>
+Willaim Batista <bootlegbilly@protonmail.ch> William Batista <bootlegbilly@protonmail.ch>
+William Breathitt Gray <vilhelm.gray@gmail.com> William Breathitt Gray <william.gray@linaro.org>
+Wolfgang E. Sanyer <ezzieyguywuf@gmail.com> Wolfgang E. Sanyer <wolfgangesanyer@gmail.com>
+Xin Yang <yangmame@icloud.com> YangMame <yangmame@icloud.com>
+Zen <z@pyl.onl> Zen <dev@pyl.onl>
+brettalcox <brettalcox@gmail.com> brettalcox <brettalcox@proton.me>
+jbara <medanisjbara@proton.me> jbara <anis2834133766619@gmail.com>
+jbara <medanisjbara@proton.me> medanisjbara <medanisjbara@proton.me>
+kernaltrap <kernaltrap@gmail.com> kernaltrap8 <kernaltrap8@github.com>
+kernaltrap <kernaltrap@gmail.com> kernaltrap8 <kernaltrap@gmail.com>
