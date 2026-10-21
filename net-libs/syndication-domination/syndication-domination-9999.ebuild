@@ -16,8 +16,6 @@ if [[ ${PV} == 9999 ]]; then
 else
 	KEYWORDS="~amd64"
 	SRC_URI="https://gitlab.com/gabmus/syndication-domination/-/archive/${PV}/${P}.tar.bz2"
-	#required for gfeeds
-	PATCHES="${FILESDIR}/gfeeds-2.2.0-blueprint-compiler-fix.patch"
 fi
 
 LICENSE="AGPL-3"
