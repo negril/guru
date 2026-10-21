@@ -11,9 +11,6 @@ DESCRIPTION="An RSS/Atom feed reader for GNOME"
 HOMEPAGE="https://gitlab.gnome.org/World/gfeeds"
 SRC_URI="https://gitlab.gnome.org/World/gfeeds/-/archive/${PV}/${P}.tar.bz2"
 
-# This fixes 1 syntax-related compilation error and syntax warnings (usage of $)
-PATCHES="${FILESDIR}/${P}-blueprint-0.80-fix.patch"
-
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -42,6 +39,11 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=">=dev-build/meson-0.58"
+
+# This fixes 1 syntax-related compilation error and syntax warnings (usage of $)
+PATCHES=(
+	"${FILESDIR}/${P}-blueprint-0.80-fix.patch"
+)
 
 src_configure() {
 	local emesonargs=(
