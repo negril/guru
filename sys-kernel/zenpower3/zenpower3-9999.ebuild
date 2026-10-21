@@ -26,10 +26,10 @@ SLOT="0"
 
 CONFIG_CHECK="HWMON PCI AMD_NB"
 
-PATCHES="
-	${FILESDIR}/${P}-use-symlink-to-detect-kernel-version.patch
-	${FILESDIR}/${PN}-amd_pci_dev_to_node_id-kernel-6.14.patch
-"
+PATCHES=(
+	"${FILESDIR}/${P}-use-symlink-to-detect-kernel-version.patch"
+	"${FILESDIR}/${PN}-amd_pci_dev_to_node_id-kernel-6.14.patch"
+)
 
 src_compile() {
 	MODULES_MAKEARGS+=(
