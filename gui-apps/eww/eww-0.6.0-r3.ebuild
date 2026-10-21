@@ -372,7 +372,9 @@ else
 	"
 	KEYWORDS="~amd64"
 
-	PATCHES="${FILESDIR}/eww-0.6.0-update-crates.patch"
+	PATCHES=(
+		"${FILESDIR}/eww-0.6.0-update-crates.patch"
+	)
 fi
 
 LICENSE="MIT"
