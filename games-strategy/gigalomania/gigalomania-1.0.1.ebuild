@@ -29,9 +29,9 @@ RDEPEND="
 	media-libs/sdl2-mixer
 "
 
-PATCHES="
-	${FILESDIR}/Makefile.patch
-"
+PATCHES=(
+	"${FILESDIR}/Makefile.patch"
+)
 
 src_compile() {
 	tc-export CXX
