@@ -24,9 +24,9 @@ RDEPEND="${DEPEND}"
 
 DOCS=( INSTALL.md README.md )
 
-PATCHES="
-	${FILESDIR}/${PN}-6.2.0-hierarchy.patch
-"
+PATCHES=(
+	"${FILESDIR}/${PN}-6.2.0-hierarchy.patch"
+)
 
 src_prepare() {
 	cmake_src_prepare
