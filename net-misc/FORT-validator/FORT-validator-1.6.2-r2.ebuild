@@ -19,8 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="caps test"
 RESTRICT="!test? ( test )"
 
-PATCHES="${FILESDIR}"/${PN}-1.5.4-libxml2-2.12.0.patch
-
 DEPEND="
 	acct-group/fort
 	acct-user/fort
@@ -35,6 +33,10 @@ BDEPEND="
 	virtual/pkgconfig
 	test? ( dev-libs/check )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.5.4-libxml2-2.12.0.patch
+)
 
 src_prepare() {
 	default
