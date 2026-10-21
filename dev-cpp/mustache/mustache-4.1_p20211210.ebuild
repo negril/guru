@@ -19,7 +19,9 @@ RESTRICT="!test? ( test )"
 
 BDEPEND="test? ( <dev-cpp/catch-3 )"
 
-PATCHES="${FILESDIR}"/${P}-unbundle-catch.patch
+PATCHES=(
+	"${FILESDIR}/${P}-unbundle-catch.patch"
+)
 
 src_configure() {
 	local mycmakeargs=(
